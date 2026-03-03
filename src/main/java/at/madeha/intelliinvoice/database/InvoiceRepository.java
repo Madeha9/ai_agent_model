@@ -47,6 +47,7 @@ public class InvoiceRepository {
     public List<InvoiceEntity> findAll() {
         return em.createQuery("select i from InvoiceEntity i", InvoiceEntity.class)
                 .getResultList();
+        //(select i from InvoiceEntity i) is a PQL query (not SQL) to fetch all rows.
     }
 
     @Transactional
