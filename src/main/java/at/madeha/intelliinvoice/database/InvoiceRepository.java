@@ -12,7 +12,7 @@ import java.util.UUID;
 
 //ApplicationScoped this class use quarkus injection method , generating the entities
 @ApplicationScoped
-public class InvoiceRepository {
+public class InvoiceRepository  {
     //Entity manger is the database tool to create query and save, find all ect, it is final
     private final EntityManager em;
 
