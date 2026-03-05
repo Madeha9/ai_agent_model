@@ -1,5 +1,8 @@
 package at.madeha.intelliinvoice.database;
-//gives the  access to JPA annotations like @Entity , @Table etc.... without will not  work
+/*
+gives the  access to JPA annotations like @Entity , @Table etc.... without will not  work
+* related to framework and the database , to map the entity to the database
+ */
 
 import jakarta.persistence.*;
 

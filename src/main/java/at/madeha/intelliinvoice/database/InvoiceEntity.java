@@ -1,6 +1,9 @@
 
 package at.madeha.intelliinvoice.database;
-
+/*
+map the objects to the database , coupled with the framework
+ */
+import at.madeha.intelliinvoice.business.InvoiceStatus;
 import jakarta.persistence.*;
 
 import java.math.BigDecimal;
@@ -54,6 +57,11 @@ public class InvoiceEntity {
     // Constructors
     public InvoiceEntity() {
     }
+    /*
+     @Enumerated(EnumType.STRING)
+       @Column(name = "status")
+    private InvoiceStatus status;
+     */
 
     // Getters and Setters
 
