@@ -60,6 +60,7 @@
         </dependency>
         <!-- ORM (Hibernate) + Panache mix of using traditional SQL and automatic one without writing the inquires -->
 
+
         <dependency>
             <groupId>io.quarkus</groupId>
             <artifactId>quarkus-hibernate-orm-panache</artifactId>
