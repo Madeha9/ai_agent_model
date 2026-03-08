@@ -48,6 +48,7 @@
     </dependencyManagement>
 
     <dependencies>
+
         <!-- REST API (Quarkus REST), for get,set, http, controller , frontend later  -->
         <dependency>
             <groupId>io.quarkus</groupId>
