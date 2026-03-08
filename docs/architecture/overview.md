@@ -43,17 +43,18 @@ This project follows a **Layered Architecture** pattern with clear separation be
 - **Dependency Injection:** For loose coupling between components
 - **Factory Pattern:** For object creation (where applicable)
 
-
 ##MyVersion
 ##Architectural Patterns
 
-* Layered Architecture: Separation into Presentation (REST Controllers), Business Logic (Services), and Data Access (Repositories).
+* Layered Architecture: Separation into Presentation (REST Controllers), Business Logic (Services), and Data Access (
+  Repositories).
 * REST Controller Pattern (Spring MVC): HTTP endpoints exposed via @RestController (JSON-based API).
 * Repository Pattern (Spring Data JPA): Data access abstraction using repository interfaces for CRUD and queries.
 * Dependency Injection (IoC): Loose coupling via Spring’s DI (@Service, @Repository, constructor injection).
 * DTO Pattern: Request/response DTOs to separate API contracts from persistence entities.
 * Transaction Management: Declarative transactions for consistency (e.g., @Transactional in service layer).
-* (Optional) Strategy Pattern: For pluggable extraction methods (e.g., OCR vs. manual input) if you implement multiple approaches.
+* (Optional) Strategy Pattern: For pluggable extraction methods (e.g., OCR vs. manual input) if you implement multiple
+  approaches.
 
 ## System Context
 
@@ -94,7 +95,8 @@ This project follows a **Layered Architecture** pattern with clear separation be
 
 - **Database:** PostgreSQL for data persistence
 - **File System:** For configuration and log files
-- **External APIs:** (None currently implemented. Future integration with AI services (e.g., OpenAI API) is under consideration.)
+- **External APIs:** (None currently implemented. Future integration with AI services (e.g., OpenAI API) is under
+  consideration.)
 
 ## High-Level Architecture
 
@@ -151,6 +153,7 @@ Cross-Cutting Concerns:
 **Purpose:** Handle user interactions and present data
 
 **Responsibilities:**
+
 - Process HTTP requests and responses
 - Input validation
 - Response formatting (JSON/XML/HTML)
@@ -158,6 +161,7 @@ Cross-Cutting Concerns:
 - Error handling and user feedback
 
 **Key Components:**
+
 - REST Controllers (if REST API)
 - Request/Response DTOs
 - API documentation
@@ -167,6 +171,7 @@ Cross-Cutting Concerns:
 **Purpose:** Implement core application functionality
 
 **Responsibilities:**
+
 - Business rules enforcement
 - Data transformation
 - Transaction management
@@ -174,6 +179,7 @@ Cross-Cutting Concerns:
 - Business validations
 
 **Key Components:**
+
 - Service classes
 - Business logic implementations
 - Domain models
@@ -184,6 +190,7 @@ Cross-Cutting Concerns:
 **Purpose:** Abstract database interactions
 
 **Responsibilities:**
+
 - CRUD operations
 - Query execution
 - Transaction management
@@ -191,6 +198,7 @@ Cross-Cutting Concerns:
 - Data mapping
 
 **Key Components:**
+
 - Repository interfaces
 - Repository implementations
 - Entity classes
@@ -199,22 +207,26 @@ Cross-Cutting Concerns:
 ### 4. Cross-Cutting Concerns
 
 **Logging:**
+
 - Centralized logging using SLF4J/Logback
 - Log levels: DEBUG, INFO, WARN, ERROR
 - Log rotation and archiving
 
 **Security:**
+
 - Authentication and authorization
 - Input sanitization
 - SQL injection prevention
 - XSS protection (if web app) (remove later)
 
 **Configuration:**
+
 - External configuration files
 - Environment-specific settings
 - Property management
 
 **Error Handling:**
+
 - Global exception handling
 - User-friendly error messages
 - Error logging and monitoring
@@ -223,15 +235,15 @@ Cross-Cutting Concerns:
 
 ### Core Technologies
 
-| Layer      | Technology                          | Purpose                                    |
-|------------|-------------------------------------|--------------------------------------------|
-| Language   | Java 11+                            | Core programming language                  |
-| Build Tool | Maven                               | Dependency management and build automation |
-| Framework  | (Spring Boot/Plain Java)            | Application framework                      |
-| Database   | PostgreSQL                          | Data persistence                           |
-| ORM        | JPA/Hibernate                       | Object-relational mapping                  |
-| Testing    | JUnit 5                             | Unit and integration testing               |
-| Logging    | SLF4J + Logback                     | Logging framework                          |
+| Layer      | Technology               | Purpose                                    |
+|------------|--------------------------|--------------------------------------------|
+| Language   | Java 11+                 | Core programming language                  |
+| Build Tool | Maven                    | Dependency management and build automation |
+| Framework  | (Spring Boot/Plain Java) | Application framework                      |
+| Database   | PostgreSQL               | Data persistence                           |
+| ORM        | JPA/Hibernate            | Object-relational mapping                  |
+| Testing    | JUnit 5                  | Unit and integration testing               |
+| Logging    | SLF4J + Logback          | Logging framework                          |
 
 ### Supporting Technologies
 
@@ -246,14 +258,19 @@ For detailed architectural decisions, see:
 
 ### Architecture Decision Records (ADRs)
 
-The project maintains Architecture Decision Records in the main `documentation/07_decisions/` directory (at repository root):
+The project maintains Architecture Decision Records in the main `documentation/07_decisions/` directory (at repository
+root):
 
-> **Note:** The ADR files are located in the repository root at `/documentation/07_decisions/`, not within the `/docs/` directory. This follows the project's convention of keeping development process documentation separate from user-facing technical documentation.
+> **Note:** The ADR files are located in the repository root at `/documentation/07_decisions/`, not within the `/docs/`
+> directory. This follows the project's convention of keeping development process documentation separate from
+> user-facing
+> technical documentation.
 
 - [ADR 001: Architecture Decision](../../../documentation/07_decisions/adr_001_architecture_decision.md)
 - [ADR 002: Technology Selection](../../../documentation/07_decisions/adr_002_technology_selection.md)
 
 These records document:
+
 - Context and problem statement
 - Considered options
 - Decision and rationale
@@ -262,19 +279,19 @@ These records document:
 ### Key Decisions Summary
 
 1. **Layered Architecture**
-   - **Rationale:** Clear separation of concerns, easier maintenance and testing
-   - **Alternatives:** Microservices, Hexagonal architecture
-   - **Trade-off:** May introduce some overhead for simple operations
+    - **Rationale:** Clear separation of concerns, easier maintenance and testing
+    - **Alternatives:** Microservices, Hexagonal architecture
+    - **Trade-off:** May introduce some overhead for simple operations
 
 2. **Java 11**
-   - **Rationale:** LTS version with modern features, wide support
-   - **Alternatives:** Java 8, Java 17
-   - **Trade-off:** Balance between stability and modern features
+    - **Rationale:** LTS version with modern features, wide support
+    - **Alternatives:** Java 8, Java 17
+    - **Trade-off:** Balance between stability and modern features
 
 3. **Maven**
-   - **Rationale:** Industry standard, extensive plugin ecosystem
-   - **Alternatives:** Gradle
-   - **Trade-off:** XML configuration vs. Groovy/Kotlin DSL
+    - **Rationale:** Industry standard, extensive plugin ecosystem
+    - **Alternatives:** Gradle
+    - **Trade-off:** XML configuration vs. Groovy/Kotlin DSL
 
 ## Quality Attributes
 
@@ -283,10 +300,10 @@ These records document:
 - **Target Response Time:** < 200ms for typical operations
 - **Throughput:** Designed to handle moderate concurrent users
 - **Optimization Strategies:**
-  - Database indexing
-  - Query optimization
-  - Connection pooling
-  - Caching (where appropriate)
+    - Database indexing
+    - Query optimization
+    - Connection pooling
+    - Caching (where appropriate)
 
 ### Security
 
@@ -295,9 +312,9 @@ These records document:
 - **Data Protection:** Encryption for sensitive data
 - **Input Validation:** All user inputs validated and sanitized
 - **Security Best Practices:**
-  - Principle of least privilege
-  - Defense in depth
-  - Secure coding guidelines
+    - Principle of least privilege
+    - Defense in depth
+    - Secure coding guidelines
 
 ### Scalability
 
@@ -348,14 +365,17 @@ These records document:
 ## Deployment Architecture
 
 ### Development Environment
+
 - Local development with embedded/local database
 - Hot reload for rapid development (if applicable - DevTools - Spring Boot)
 
 ### Testing Environment
+
 - Isolated test database
 - Automated testing pipeline
 
 ### Production Environment (if applicable - for future )
+
 - Application server
 - Production database
 - Load balancer (for scaling)

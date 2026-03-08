@@ -84,6 +84,7 @@ public class InvoiceProcessingService {
     public InvoiceEntity getInvoiceById(UUID id) {
         return repository.findById(id).orElse(null); // returns null if not found
     }
+
     // Delete invoice
     /*
     Optional<InvoiceEntity>

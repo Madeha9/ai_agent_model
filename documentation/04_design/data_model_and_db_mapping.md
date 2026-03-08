@@ -1,4 +1,3 @@
-
 # Data Model and Database Mapping
 
 ## Overview
@@ -62,6 +61,7 @@ The core concept is an **Invoice** with:
 ## Physical Data Model (Database Schema)
 
 ### Table: invoice
+
 ```sql
 CREATE TABLE invoice
 (
@@ -90,6 +90,7 @@ CREATE TABLE invoice
 - total_amount uses NUMERIC(12,2) for accurate money values
 
 ### Table:invoice_item
+
 ```sql
 CREATE TABLE invoice_item
 (
@@ -110,7 +111,6 @@ CREATE TABLE invoice_item
 
 - invoice_id is a FOREIGN KEY → invoice(id)
 - ON DELETE CASCADE ensures invoice items are removed automatically when an invoice is deleted
-
 
 ## Object-Relational Mapping (ORM)
 

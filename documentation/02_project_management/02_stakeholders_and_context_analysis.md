@@ -1,6 +1,7 @@
 # Stakeholders and Context Analysis
 
 ## Stakeholders
+
 | Name                    | Role                     | Interest                                                                                                                                                     |
 |-------------------------|--------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | End Users (Customers)   | Users of the application | Store and access invoices digitally, retrieve invoices when returning products , and receive decision support during shopping to avoid unnecessary purchases |
@@ -8,8 +9,8 @@
 | Trainers / Evaluators   | Reviewers                | Assess project quality, architecture, and documentation                                                                                                      |
 | Retailers (Indirect)    | Invoice issuers          | Provide invoices that can be scanned and stored digitally                                                                                                    |
 
-
 ## Business Context
+
 The Smart Invoice project exists to solve a common real-world problem:
 customers lose paper invoices, which prevents them from returning or exchanging products.
 
@@ -34,18 +35,20 @@ The system solves this problem by:
 * Helping users make smarter shopping decisions
 * Using an AI agent to analyze shopping behavior and reduce unnecessary purchases
 
-The system can be used by individuals during shopping  and potentially by stores as a digital invoice solution.
+The system can be used by individuals during shopping and potentially by stores as a digital invoice solution.
 
 The system is developed as a student project within an academic environment and is evaluated
-as part of a software development course. Despite its academic scope, 
+as part of a software development course. Despite its academic scope,
 the project addresses a real-world retail problem faced by customers in physical stores.
-The system operates in physical retail environments with internet access and must handle 
-varying return policies across different stores. Its goal is to support customers by digitally storing invoice information,
+The system operates in physical retail environments with internet access and must handle
+varying return policies across different stores. Its goal is to support customers by digitally storing invoice
+information,
 tracking return deadlines, and improving decision-making during shopping.
+
 ## Technical Context
 
 The project is implemented as a final project for the Software Development course
-at WIFI and was developed over a period of approximately two months. The system is designed to 
+at WIFI and was developed over a period of approximately two months. The system is designed to
 demonstrate practical software engineering skills within an academic scope.
 
 **Technologies and Tools**
@@ -63,7 +66,8 @@ demonstrate practical software engineering skills within an academic scope.
 * Development time is limited due to academic deadlines
 * No access to large-scale, real-world retail datasets
 * No access to banking information or online payment systems
-* The system is intended for clothing and footwear products purchased in physical stores and does not cover food or grocery items
+* The system is intended for clothing and footwear products purchased in physical stores and does not cover food or
+  grocery items
 * AI-related features are implemented at a prototype level and are not production-ready
 
 ## Risks and Assumptions
