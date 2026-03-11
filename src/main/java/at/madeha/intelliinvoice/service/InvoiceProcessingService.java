@@ -3,11 +3,12 @@ package at.madeha.intelliinvoice.service;
 import at.madeha.intelliinvoice.database.InvoiceEntity;
 import at.madeha.intelliinvoice.database.InvoiceItemEntity;
 import at.madeha.intelliinvoice.database.InvoiceRepository;
-import at.madeha.intelliinvoice.infrastructure.CloudStorageService;
+import at.madeha.intelliinvoice.service.helper.InvoiceUploadService;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 import org.jboss.logging.Logger;
 
+import java.io.InputStream;
 import java.math.BigDecimal;
 import java.time.Instant;
 import java.util.List;
@@ -21,7 +22,10 @@ public class InvoiceProcessingService {
     private static final Logger LOG = Logger.getLogger(InvoiceProcessingService.class);
     /*
     the class do the bussein workflow and mean business logic
+    the llm will be called here in order to extract the info
      */
+    @Inject
+    InvoiceUploadService uploadHelper; //this return the url image after saving it in the s3
     @Inject
     private InvoiceValidationService validationService;
     @Inject
@@ -29,9 +33,17 @@ public class InvoiceProcessingService {
     @Inject
     private InvoiceRepository repository;
     @Inject
-    private CloudStorageService cloudStorageService;
+    private StorageService storageService;
 
-    // Upload an invoice image then  create invoice entity in the database
+    /*uploadHelper is a helper class  only to upload the image and return the url
+    handelhelper calls the upload the class , and return the url
+     */
+    public String handleUpload(InputStream fileInput, String fileName) {
+
+        String imageUrl = uploadHelper.processUploadedInvoice(fileInput, fileName);
+        LOG.info("Image uploaded: " + imageUrl);
+        return imageUrl;
+    }    // Upload an invoice image then  create invoice entity in the database
     public InvoiceEntity createInvoice(InvoiceEntity invoice) {
         validationService.validate(invoice);
         //now is from the type Instant , to set up the data automatic
